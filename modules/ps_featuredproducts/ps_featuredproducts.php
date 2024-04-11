@@ -290,7 +290,7 @@ class Ps_FeaturedProducts extends Module implements WidgetInterface
         if (Configuration::get('HOME_FEATURED_RANDOMIZE')) {
             $query->setSortOrder(SortOrder::random());
         } else {
-            $query->setSortOrder(new SortOrder('product', 'position', 'asc'));
+            $query->setSortOrder(new SortOrder('product', 'name', 'desc'));
         }
 
         $result = $searchProvider->runQuery(
