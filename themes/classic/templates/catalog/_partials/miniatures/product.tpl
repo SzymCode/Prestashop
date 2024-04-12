@@ -33,8 +33,19 @@
               <picture>
                 {if !empty($product.cover.bySize.home_default.sources.avif)}<source srcset="{$product.cover.bySize.home_default.sources.avif}" type="image/avif">{/if}
                 {if !empty($product.cover.bySize.home_default.sources.webp)}<source srcset="{$product.cover.bySize.home_default.sources.webp}" type="image/webp">{/if}
+                {assign var='productimg' value=Image::getImages($language.id, $product.id)}
                 <img
+                  class="main-image"
                   src="{$product.cover.bySize.home_default.url}"
+                  alt="{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"
+                  loading="lazy"
+                  data-full-size-image-url="{$product.cover.large.url}"
+                  width="{$product.cover.bySize.home_default.width}"
+                  height="{$product.cover.bySize.home_default.height}"
+                />
+                <img
+                  class="second-image"
+                  src="{$link->getImageLink($product.link_rewrite,$product.id_product|cat:"-"|cat:$productimg[1].id_image, 'home_default')}"
                   alt="{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"
                   loading="lazy"
                   data-full-size-image-url="{$product.cover.large.url}"
