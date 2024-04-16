@@ -66,3 +66,27 @@ body.page-index #wrapper #custom-text{
 .product-thumbnail:hover .main-image {
     display: none !important;
 }
+
+
+
+
+#cart #footer,
+#cart #header,
+#checkout #footer,
+#checkout #header {
+    display: none !important;
+}
+#cart main,
+#cart #wrapper {
+    height: 100%;
+}
+#cart #main,
+#checkout #content {
+    display: flex ;
+    flex-direction: column;
+    gap: 20px;
+}
+#cart #continue-shopping,
+#checkout #back-to-cart {
+    max-width: max-content;
+}

@@ -27,6 +27,11 @@
 {block name='content'}
 
   <section id="main">
+    {block name='continue_shopping'}
+      <a class="label" href="{$urls.pages.index}" id="continue-shopping">
+        <i class="material-icons">chevron_left</i>{l s='Continue shopping' d='Shop.Theme.Actions'}
+      </a>
+    {/block}
     <div class="cart-grid row">
 
       <!-- Left Block: cart product informations & shipping -->
@@ -42,12 +47,6 @@
             {include file='checkout/_partials/cart-detailed.tpl' cart=$cart}
           {/block}
         </div>
-
-        {block name='continue_shopping'}
-          <a class="label" href="{$urls.pages.index}">
-            <i class="material-icons">chevron_left</i>{l s='Continue shopping' d='Shop.Theme.Actions'}
-          </a>
-        {/block}
 
         <!-- shipping informations -->
         {block name='hook_shopping_cart_footer'}

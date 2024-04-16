@@ -30,6 +30,11 @@
 
 {block name='content'}
   <section id="content">
+    {block name='back_to_cart'}
+      <a class="label" href="{$urls.pages.cart}" id="back-to-cart">
+        <i class="material-icons">chevron_left</i>{l s='Back to cart' d='Shop.Theme.Actions'} {* Translation configuration in future *}
+      </a>
+    {/block}
     <div class="row">
       <div class="cart-grid-body col-xs-12 col-lg-8">
         {block name='checkout_process'}
